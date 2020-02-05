@@ -1,5 +1,7 @@
 
 
-**Holberton low-level programming**
+** programming in C**
 
-This repository contains all the exercises and assigments the Holberton School has provided to learn how to code in programming language C. 
+One of the biggest achievements of C is the application of its language in the mars curiosity.
+
+It's multiple uses will let the user develop great works. 
