@@ -5,9 +5,8 @@
  *
  * Return: Always 0.
  */
-int print_last_digit(int x)
+int main(void)
 {
-	x = x % 10;
-	_putchar( x + '0');
-	return (x);
+	jack_bauer();
+	return (0);
 }
