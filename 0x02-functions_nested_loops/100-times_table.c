@@ -1,15 +1,15 @@
 #include "holberton.h"
 
 /**
- * times_table - check the code for Holberton School students.
- * @n - limit
+ * print_times_table - check the code for Holberton School students.
+ * @n: limit
  * Return: Always 0.
  */
 void print_times_table(int n)
 {
 	int a, b, c = 0;
 
-	if (n < 15 && n > 0 )
+	if (n < 15 && n > 0)
 	{
 		for (a = 0; a <= n; a++)
 		{
@@ -18,13 +18,13 @@ void print_times_table(int n)
 				c = b * a;
 				if (c <= 9)
 				{
-					if (b !=0 )
+					if (b != 0)
 					{
 						_putchar(',');
 						_putchar(' ');
 						_putchar(' ');
 						_putchar(' ');
-				        }
+					}
 				_putchar(c + '0');
 				}
 				else if (c < 100)
