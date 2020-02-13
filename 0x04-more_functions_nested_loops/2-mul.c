@@ -2,7 +2,7 @@
 
 /**
  * mul - check the code for Holberton School students.
- * @c: factor a
+ * @a: factor a
  * @b: factor b
  * Return: Always 0.
  */
