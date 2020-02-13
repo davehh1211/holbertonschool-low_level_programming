@@ -1,4 +1,3 @@
-#include "holberton.h"
 #include <stdio.h>
 
 /**
@@ -20,7 +19,11 @@ int main(void)
 		}
 		else if (a % 5 == 0)
 		{
-			printf("Buzz ");
+			printf("Buzz");
+			if (a != 100)
+			{
+				printf(" ");
+			}
 		}
 		else if (a % 3 == 0)
 		{
@@ -31,9 +34,6 @@ int main(void)
 			printf("%d ", a);
 		}
 	}
-	if (a != 100)
-	{
-	printf(" \n");
-	}
+	printf("\n");
 	return (0);
 }
