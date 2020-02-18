@@ -1,4 +1,4 @@
-#include <unistd.h>
+#include "holberton.h"
 
 /**
  * swap_int - writes the character c to stdout
@@ -10,6 +10,9 @@
  */
 void swap_int(int *a, int *b)
 {
-	*a = 42;
-	*b = 98;
+	int x;
+
+	x = *a;
+	*a = *b;
+	*b = x;
 }
