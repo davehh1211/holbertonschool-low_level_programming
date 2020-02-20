@@ -18,7 +18,7 @@ int _atoi(char *s)
 
 	for (c = 0; src[c] < '0' || s[c] > '9'; c++)
 	{
-		if (s [c] == '-')
+		if (s[c] == '-')
 			sign++;
 	}
 	for (j = c; s[j] >= '0' && s[j] <= '9'; j++)
