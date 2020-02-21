@@ -1,11 +1,10 @@
 #include "holberton.h"
 
 /**
+ * *rot13 - write a function
+ * @s: number of bytes
  *
- * Rot13 - decode in rot13
- * @s: the character to return
- * Return - return the character
- *
+ * Return: On success 1.
  */
 char *rot13(char *s)
 {
