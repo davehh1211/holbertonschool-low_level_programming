@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * *string_toupper - correct, writes the character c to stdout
+ * *string_toupper - writes the character c to stdout
  * @s: The character to print
  *
  * Return: On success 1.
