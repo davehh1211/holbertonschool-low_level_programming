@@ -7,7 +7,7 @@
  * return: string
  */
 
-char *leet(char *s)}
+char *leet(char *c)
 {
 	char low[] = "aeotl";
 	char up[] = "AEOTL";
@@ -19,9 +19,10 @@ char *leet(char *s)}
 		for (m = 0; low[m] != '\0'; m++)
 		{
 			if (c[x] == low[m] || c[x] == up[m])
+			{
 				c[x] = rep[m];
+			}
 		}
 	}
-
 	return (c);
 }
