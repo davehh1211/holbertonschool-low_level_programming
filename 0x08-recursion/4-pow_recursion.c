@@ -5,7 +5,7 @@
  * @x: The character to print
  * @y: times to the power
  *
- * return: value conditional
+ * Return: value conditional
  *
  */
 int _pow_recursion(int x, int y)
