@@ -3,13 +3,13 @@
 int sum(int i, int m);
 
 /**
- * _sqrt_recursion - returns the value of x raised to the power of y
+ * is_prime_number - returns 1 if the input integer is a prime number
  * @n: square of a number
  *
  * Return: value conditional
  *
  */
-int _sqrt_recursion(int n)
+int is_prime_number(int n)
 {
 	int j = 2;
 
@@ -27,16 +27,18 @@ int _sqrt_recursion(int n)
 
 int sum(int i, int m)
 {
-	if (m % i == 0)
+	if (m == i)
 	{
-		return (-1);
+		return (1);
 	}
-	else if (i * i == m)
+	else if (m < i)
 	{
-		return (i);
+		return (0);
 	}
-	else
+	else if (m % i == 0 && i < m)
 	{
-		return (sum(i + 1, m));
+		return (0);
 	}
+	return (sum(i + 1, m));
+
 }
