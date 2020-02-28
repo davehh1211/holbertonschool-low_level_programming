@@ -1,7 +1,6 @@
 #include "holberton.h"
 
 /**
- *
  * _strstr - Write a function that locates a substring
  *
  * @haystack: string to be evaluated
@@ -25,5 +24,5 @@ char *_strstr(char *haystack, char *needle)
 	{
 		return (haystack + i);
 	}
-	return (0);
+	return ('\0');
 }
