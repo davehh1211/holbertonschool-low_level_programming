@@ -6,12 +6,12 @@
  * main - fucntion to change name of programs
  * @argc: the times of the argument lines
  * @argv: the string of the command line
- * Return: integer
+ * Return: 0
  */
 
 int main(int argc, char *argv[])
 {
-	int i, sum;
+	int i, sum = 0;
 
 	if (argc > 2)
 	{
