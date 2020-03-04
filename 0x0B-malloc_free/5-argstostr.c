@@ -23,7 +23,11 @@ char *argstostr(int ac, char **av)
 			count++;
 		}
 	}
-	p1 = malloc(sizeof(char *) * count + ac + 1);
+	p1 = malloc(sizeof(char *) * (count + ac + 1));
+	if (p1 == NULL)
+	{
+		return (NULL);
+	}
 
 	for (i = 0; i < ac; i++)
 	{
