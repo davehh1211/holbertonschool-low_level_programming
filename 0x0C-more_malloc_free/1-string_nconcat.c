@@ -11,7 +11,7 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *ar;
-	unsigned int i, j, t, sum = 0, k, lens1 = 0, lens2 = 0;
+	unsigned int i, j, t, p, sum = 0, k, lens1 = 0, lens2 = 0;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -30,7 +30,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	for (t = 0; t < lens1; t++) /*to write the s1 on the ar memory*/
 		ar[t] = s1[t];
+
 	for (k = 0; k < n && s1[k] != '\0'; k++)
 		ar[t + k] = s2[k];
+	if (n >= lens2)
+		for (p = 0; p <= lens2; p++)
+			ar[t + p] = s2[p];
 	return (ar);
 }
