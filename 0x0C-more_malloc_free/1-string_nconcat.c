@@ -34,7 +34,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (t = 0; t < lens1; t++) /*to write the s1 on the ar memory*/
 		ar[t] = s1[t];
 
-	for (p = 0; p <= lens2; p++)
+	for (p = 0; p < lens2; p++)
 		ar[t + p] = s2[p];
 	ar[t + p] = '\0';
 	return (ar);
