@@ -4,6 +4,7 @@
 /**
  * malloc_checked - Write a function that allocates memory using malloc
  * @b: var to be asigned
+ * Return: nothing
  */
 void *malloc_checked(unsigned int b)
 {
