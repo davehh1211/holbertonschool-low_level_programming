@@ -16,7 +16,8 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 
 	av = malloc(nmemb * size);
-
+	if (av == NULL)
+		return (NULL);
 	for (i = 0; i < (nmemb * size); i++)
 	{
 		av[i] = '\0';
