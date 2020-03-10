@@ -26,12 +26,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 	ruffo->owner = malloc(l + 1); /*owner mem*/
 	if (ruffo->name == NULL || ruffo->owner == NULL)
 	{
-		return (NULL);
 		free(ruffo->name);
 		free(ruffo->owner);
 		free(ruffo);
+		return (NULL);
 	}
-       	for (i = 0; i < k; i++)
+	for (i = 0; i < k; i++)
 		ruffo->name[i] = name[i];
 	ruffo->name[i] = '\0';
 	for (i = 0; i < l; i++)
