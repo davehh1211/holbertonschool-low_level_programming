@@ -16,6 +16,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	ruffo = malloc(sizeof(dog_t)); /*struct mem*/
 	if (ruffo == NULL)
 		return (NULL);
+
 	for (k = 0; name[k]; k++)
 		;
 	for (l = 0; owner[l]; l++)
@@ -24,10 +25,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 	ruffo->name = malloc(k + 1); /*name mem*/
 	ruffo->owner = malloc(l + 1); /*owner mem*/
 	if (ruffo->name == NULL || ruffo->owner == NULL)
+	{
+		return (NULL);
 		free(ruffo->name);
 		free(ruffo->owner);
 		free(ruffo);
-		return (NULL);
+	}
        	for (i = 0; i < k; i++)
 		ruffo->name[i] = name[i];
 	ruffo->name[i] = '\0';
