@@ -1,4 +1,24 @@
 #include "lists.h"
+int _strlen(const char *s);
+/**
+ * _strlen - writes the character c to stdout
+ * @s: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _strlen(const char *s)
+{
+	int leng;
+
+	while (*s != '\0')
+	{
+		s++;
+		leng++;
+	}
+	return (leng);
+}
+
 /**
  * add_node - add new node
  * @head: head node to be added
@@ -7,15 +27,13 @@
  */
 list_t *add_node(list_t **head, const char *str)
 {
-	unsigned int length;
 	list_t *newhead;
 
-	length = strlen(str);
 	newhead = malloc(sizeof(list_t));
 	if (!newhead)
 		return (NULL);
 	newhead->str = strdup(str);
-	newhead->len = length;
+	newhead->len = _strlen(str);
 	newhead->next = *head;
 	*head = newhead;
 
