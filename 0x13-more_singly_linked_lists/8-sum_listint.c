@@ -1,7 +1,8 @@
 #include "lists.h"
-/*
-*
-*
+/**
+* sum_listint - function that add the values of the nodes
+* @head: the list or node to be added
+* Return: the addition
 */
 int sum_listint(listint_t *head)
 {
