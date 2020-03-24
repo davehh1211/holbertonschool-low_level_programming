@@ -14,7 +14,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	if (head == NULL)
 		return (NULL);
 	new = malloc(sizeof(listint_t)); /*create the node first*/
-	if (!new)
+	if (new == NULL)
 		return (NULL);
 	new->n = n; /*assign value*/
 	tmp1 = *head; /*tmp1 point whay head points*/
@@ -32,10 +32,11 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (new);
 	}
 	tmp1 = *head;
-	for (i = 0; tmp1; i++)
+	while (tmp1)
 	{
 		tmp2 = tmp1;
 		tmp1 = tmp2->next;
+		i++;
 		if (i == idx)
 		{
 			new->next = tmp1;
