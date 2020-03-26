@@ -1,0 +1,3 @@
+## BIT MANIPULATION
+# AN ENTRANCE TO BINARY CODE
+to develop...
