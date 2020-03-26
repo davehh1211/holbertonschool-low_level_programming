@@ -6,7 +6,7 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t i = 0;
+	unsigned int i = 0;
 
 	if (head == NULL)
 		return (0);
@@ -22,7 +22,7 @@ size_t print_listint_safe(const listint_t *head)
 		{
 			printf("-> [%p] %d\n", (void *)head->next, head->next->n);
 			break;
-		}	
+		}
 	}
 	return (i);
 }
