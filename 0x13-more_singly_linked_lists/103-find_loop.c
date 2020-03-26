@@ -6,21 +6,22 @@
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-	listint_t *nodeloop;
+	listint_t *nodeloop = head, *finder;
 
 	if (head == NULL)
 		return (NULL);
-	while (head)
+	if (head == head->next)
+		return (head);
+	while (nodeloop)
 	{
-		if (head - (head->next) > 0)
+		nodeloop = nodeloop->next;
+		finder = head;
+		while (nodeloop && finder != nodeloop)
 		{
-			head = head->next;
-		}
-		else
-		{
-			nodeloop = head->next;
-			return (nodeloop);
+			if (finder == nodeloop->next)
+				return (finder);
+			finder = finder->next;
 		}
 	}
-	return (NULL);
+	return (nodeloop);
 }
