@@ -29,6 +29,7 @@ int main(int ac, char *av[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	}
+	readfile = 1024;
 	do {
 		readfile = read(from, buf, 1024);
 		if (readfile == -1)
@@ -59,6 +60,8 @@ void _closure(int doc)
 
 	failure = close(doc);
 	if (failure == -1)
+	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", doc);
 		exit(100);
+	}
 }
