@@ -11,11 +11,9 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	unsigned int i = 1;
 	dlistint_t *tmp, *newnode;
 
-	if ((idx > dlistint_len(*h)) || (*h == NULL && idx != 0)) /*not defined*/
+	if ((idx > dlistint_len(*h)) || (h == NULL && idx != 0)) /*not defined*/
 		return (NULL);
 	/*if head is null or first node next is null*/
-	if (*h == NULL || (*h)->next == NULL)
-		return (add_dnodeint(h, n));
 	newnode = malloc(sizeof(dlistint_t));
 	if (newnode == NULL)
 		return (NULL);
