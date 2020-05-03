@@ -16,7 +16,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (idx > dlistint_len(*h)) /*not defined*/
 		return (NULL);
 	/*if head is null or first node next is null*/
-	if (h == NULL || (*h)->next == NULL)
+	if (*h == NULL || (*h)->next == NULL)
 		return ((add_dnodeint(h, n)));
 	if (idx == dlistint_len(*h)) /*if pos is the last*/
 		return (add_dnodeint_end(h, n));
