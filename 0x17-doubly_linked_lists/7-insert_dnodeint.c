@@ -11,31 +11,34 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	unsigned int i = 1;
 	dlistint_t *tmp, *newnode;
 
-	/*idx = 0;*/
-
 	if ((idx > dlistint_len(*h)) || (*h == NULL && idx != 0)) /*not defined*/
 		return (NULL);
 	/*if head is null or first node next is null*/
 	if (*h == NULL || (*h)->next == NULL)
-		return ((add_dnodeint(h, n)));
-	if (idx == dlistint_len(*h)) /*if pos is the last*/
-		return (add_dnodeint_end(h, n));
-
+		return (add_dnodeint(h, n));
 	newnode = malloc(sizeof(dlistint_t));
 	if (newnode == NULL)
 		return (NULL);
 	newnode->n = n;
 	tmp = *h;
-	while (i < idx)
+	if (idx == 0)
+		return (add_dnodeint(h, n));
+	else if (idx == dlistint_len(*h))
 	{
-		tmp = tmp->next;
-		i++;
+		return (add_dnodeint_end(h, n));
+	}
+	else
+	{
+		while (i < idx)
+		{
+			tmp = tmp->next;
+			i++;
+		}
 	}
 	newnode->prev = tmp;
 	newnode->next = tmp->next;
 	tmp->next = newnode;
 	newnode->next->prev = newnode;
-
 	return (*h);
 }
 /**
