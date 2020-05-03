@@ -13,7 +13,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	/*idx = 0;*/
 
-	if (idx > dlistint_len(*h)) /*not defined*/
+	if ((idx > dlistint_len(*h)) || (*h == NULL && idx != 0)) /*not defined*/
 		return (NULL);
 	/*if head is null or first node next is null*/
 	if (*h == NULL || (*h)->next == NULL)
@@ -28,7 +28,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	tmp = *h;
 	while (i < idx)
 	{
-		
 		tmp = tmp->next;
 		i++;
 	}
