@@ -1,18 +1,20 @@
 #include "lists.h"
 /**
- * sum_dlistint - add the values of each node
- * @head: the address of the head of the linked list
- * Return: the sum of the values
+ * insert_dnodeint_at_index - insert nodes in given position
+ * @h: the address of the head of the linked list
+ * @idx: position
+ * @n: value of the new node
+ * Return: the node inserted
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	unsigned int i = 1;
 	dlistint_t *tmp, *newnode;
 
-	if (idx > dlistint_len(*h) || idx < 1 ) /*not defined*/
+	if (idx > dlistint_len(*h) || idx < 1) /*not defined*/
 		return (NULL);
 	/*if head is null or first node next is null*/
-	if (h == NULL || (*h)->next == NULL || idx == 1)
+	if (h == NULL || (*h)->next == NULL)
 		return ((add_dnodeint(h, n)));
 	if (idx == dlistint_len(*h)) /*if pos is the last*/
 		return (add_dnodeint_end(h, n));
