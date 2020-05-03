@@ -36,7 +36,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	newnode->next = tmp->next;
 	tmp->next = newnode;
 	newnode->next->prev = newnode;
-	return (*h);
+	return (newnode);
 }
 /**
  * dlistint_len - print the number of iterations
