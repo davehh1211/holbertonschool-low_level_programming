@@ -1,50 +1,49 @@
 #include "hash_tables.h"
+
 /**
- * hash_table_set - adds an element to the hash table.
- * @ht: hash table
- * @key: keyword
- * @value: value to be added
- * Return: 1 in success, 0 in failure
+ * hash_table_set - function that adds an element to the hash table.
+ * @ht: is the hash table you want to add or update the key/value to
+ * @key: is the key. key can not be an empty string.
+ * @value: is the value associated with the key. value must be duplicated.
+ * value can be an empty string
+ * Return: 1 if it succeeded, 0 otherwise
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int idx;
-	hash_node_t *newnode = NULL, *ptr = NULL;
+	unsigned long int index;
+	hash_node_t *ptr = NULL, *new_node = NULL;
 
-	if (value == NULL || key == NULL || ht == NULL)
+	if (ht == NULL || key == NULL || value == NULL)
 		return (0);
-	idx = key_index((const unsigned char *)key, ht->size);
-	ptr = ht->array[idx];
+/*Check the index of where the key is located*/
+	index = key_index((const unsigned char *)key, ht->size);
+	ptr = ht->array[index];
 	while (ptr)
 	{
 		if (strcmp(ptr->key, key) == 0)
 		{
-			if (ptr->value)
-				free(ptr->value);
-			ptr->value = strdup(value);
-			if (!ptr->value)
+			if (ptr->value)/*checks if there is asociated to that key*/
+				free(ptr->value);/*free that value and*/
+			ptr->value = strdup(value);/*update the value*/
+			if (!ptr->value)/*checks if no problem with malloc within strdup*/
 				return (0);
-			return (1);
+			return (1);/*return success*/
 		}
-		ptr = ptr->next;
+		ptr = ptr->next;/*help the loop to advance to the next node*/
 	}
-	newnode = malloc(sizeof(hash_node_t));
-	if (!newnode)
+	new_node = malloc(sizeof(hash_node_t)); /*In case of collision, add node */
+	if (!new_node)
 		return (0);
-	newnode->key = strdup(key);
-	if (!newnode->key)
-	{
-		free(newnode);
-		return (0);
-	}
-	newnode->value = strdup(value);
-	if (!newnode->value)
-	{
-		free(newnode->key);
-		free(newnode);
-		return (0);
-	}
-	newnode->next = ht->array[idx];
-	ht->array[idx] = newnode;
+	new_node->key = strdup(key);/*Now we will assgin */
+	if (!new_node->key)/*checks if no problem with malloc within strdup*/
+	{ free(new_node);
+	return (0); }
+	new_node->value = strdup(value);
+	if (!new_node->value)/*checks if no problem with malloc within strdup*/
+	{ free(new_node->key);
+	free(new_node);
+	return (0); }
+	new_node->next = ht->array[index];
+	ht->array[index] = new_node;
 	return (1);
 }
