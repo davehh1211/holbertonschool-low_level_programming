@@ -9,11 +9,11 @@ void hash_table_print(const hash_table_t *ht)
 	unsigned int i = 0;
 	unsigned int size, c = 0;
 
-	size = ht->size;
 	if (!ht)
 	{
 		return;
 	}
+	size = ht->size;
 	printf("{"); /*fix mistake*/
 	for (i = 0; i < size; i++)
 	{
