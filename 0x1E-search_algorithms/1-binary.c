@@ -7,13 +7,13 @@
  */
 void printarr(int *array, int size)
 {
-	int i = 0;
+	int a = 0;
 
 	printf("Searching in array:");
-	for (i = 0; i < size; i++)
+	for (a = 0; a < size; a++)
 	{
-		printf(" %i", array[i]);
-		if (i != size - 1)
+		printf(" %d", array[a]);
+		if (a != size - 1)
 			printf(",");
 	}
 	printf("\n");
@@ -30,37 +30,25 @@ void printarr(int *array, int size)
  */
 int binary_search(int *array, size_t size, int value)
 {
-	if (array != NULL && size > 0)
+	if (array != NULL || size > 0)
 	{
 		size_t low = 0;
 		size_t high = size - 1;
 
-		printarr(array + low, high + 1 - low);
-		while (low < high)
+		while (low <= high)
 		{
 			size_t middle = (low + high) / 2;
-			/*printf("%i\n", middle);*/
+			printarr(array + low, high + 1 - low);
 			if (array[middle] == value)
 				return (middle);
 			else if (array[middle] < value)
 			{
 				low = middle + 1;
-				/*printf("higher\n");*/
-				/*printf("%i - %i\n", low, high);*/
-				/*printarr(array + low, high + 1 - low);*/
-				/*return (low);*/
 			}
 			else if (array[middle] > value)
 			{
 				high = middle - 1;
-				/*printf("lower\n");*/
-				/*printf("%i - %i\n", low, high);*/
-				/*printarr(array, high + 1);*/
-				/*return (high);*/
 			}
-			/*printf("some");*/
-			printarr(array + low, high + 1 - low);
-			/*return (30);*/
 		}
 	}
 	return (-1);
