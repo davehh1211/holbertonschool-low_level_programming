@@ -30,7 +30,7 @@ void printarr(int *array, int size)
  */
 int binary_search(int *array, size_t size, int value)
 {
-	if (value > (int)size || array != NULL)
+	if ((value > (int)size || array != NULL) && size > 0)
 	{
 		int low = 0;
 		int high = size - 1;
