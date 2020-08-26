@@ -32,13 +32,13 @@ int binary_search(int *array, size_t size, int value)
 {
 	if ((value > (int)size || array != NULL) && size > 0)
 	{
-		int low = 0;
-		int high = size - 1;
+		size_t low = 0;
+		size_t high = size - 1;
 
 		printarr(array + low, high + 1 - low);
 		while (low < high)
 		{
-			int middle = (low + high) / 2;
+			size_t middle = (low + high) / 2;
 			/*printf("%i\n", middle);*/
 			if (array[middle] == value)
 				return (middle);
