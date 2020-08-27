@@ -37,7 +37,8 @@ void printarr(int *array, int size)
  * the Binary search algorithm
  * @array:  is a pointer to the first element of the
  * array to search in
- * @size: number of elements in the array
+ * @low: lowest number of elements in the array
+ * @high: highest number of elements in the array
  * @value: the value to be searched for
  * Return: the index of the found value
  */
@@ -81,13 +82,13 @@ int exponential_search(int *array, size_t size, int value)
 	{
 		while (pos < size && array[pos] <= value)
 		{
-			printf ("Value checked array[%lu] = [%i]\n", pos, array[pos]);
+			printf("Value checked array[%lu] = [%i]\n", pos, array[pos]);
 			if (array[pos] <= value)
 				pos = pos * 2;
 		}
 		pas = valuemin(size - 1, pos);
 		printf("Value found between indexes [%lu] and [%lu]\n", pos / 2, pas);
-		return (binary_search_2(array, pos/2, pas, value));
+		return (binary_search_2(array, pos / 2, pas, value));
 	}
 	return (-1);
 }
